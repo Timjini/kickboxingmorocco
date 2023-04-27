@@ -71,6 +71,8 @@ GEM
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
+    bson (4.15.0)
+    bson_ext (1.5.1)
     builder (3.2.4)
     capybara (3.39.0)
       addressable
@@ -114,6 +116,12 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.18.0)
+    mongo (2.18.2)
+      bson (>= 4.14.1, < 5.0.0)
+    mongoid (7.5.2)
+      activemodel (>= 5.1, < 7.1, != 7.0.0)
+      mongo (>= 2.10.5, < 3.0.0)
+      ruby2_keywords (~> 0.0.5)
     msgpack (1.7.0)
     net-imap (0.3.4)
       date
@@ -127,7 +135,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
-    pg (1.5.1)
+    pg (1.5.2)
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -167,6 +175,7 @@ GEM
     reline (0.3.3)
       io-console (~> 0.5)
     rexml (3.2.5)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.9.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -211,11 +220,13 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bson_ext
   capybara
   debug
   i18n (~> 1.8)
   importmap-rails
   jbuilder
+  mongoid (~> 7.0)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
