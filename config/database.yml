@@ -79,11 +79,11 @@ development:
 # # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # # for a full overview on how database connection configuration can be specified.
 # #
-# production:
-#   <<: *default
-#   database: kickboxing_production
-#   username: kickboxing
-#   password: <%= ENV["KICKBOXING_DATABASE_PASSWORD"] %>
+production:
+  <<: *default
+  database: <%= ENV["DATABASE_URL"] %>
+  username: kickboxing
+  password: <%= ENV["KICKBOXING_DATABASE_PASSWORD"] %>
 
 
 # # # config/database.yml

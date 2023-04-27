@@ -13,6 +13,7 @@ gem "sprockets-rails"
 gem "pg", "~> 1.1"
 gem 'mongoid', '~> 7.0'
 gem 'bson_ext'
+gem 'font-awesome-sass'
 
 
 # Use the Puma web server [https://github.com/puma/puma]
