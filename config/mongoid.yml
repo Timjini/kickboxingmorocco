@@ -188,6 +188,7 @@ test:
 production:
   clients:
     default:
+      uri: mongodb+srv://timjini:150150hl@kbm.snuscwo.mongodb.net/test
       database: kickboxing_production
       hosts:
         - localhost:27017
