@@ -8,7 +8,4 @@ class HomeController < ApplicationController
         @pagename = "About"
     end
 
-    def index
-        @post = Post.all
-    end
 end
