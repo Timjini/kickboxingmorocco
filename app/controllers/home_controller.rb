@@ -7,4 +7,8 @@ class HomeController < ApplicationController
     def about 
         @pagename = "About"
     end
+
+    def index
+        @post = Post.all
+    end
 end

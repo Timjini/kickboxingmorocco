@@ -1,2 +1,8 @@
 <%= render "components/slider"%>
 <%= render "components/hero"%>
+<div style="background-color:black">
+post
+<% @post.each do |p| %>
+    <h1 class="text-white"> <%= p.title%> </h1>
+<%end%>
+</div>
