@@ -4,17 +4,16 @@
     <div class="row align-items-center">
       <div class="col-lg-6">
          <div class="section-title text-left">
-		  <h2>WE'RE ALLWAYS <br>HAPPY
-TO HELP</h2>
-			 <p>If you have any questions or need any further information then please<br>
-don’t hesitate to contact us.</p>
+		  <h2>AVEZ-VOUS BESOIN D'AIDE</h2>
+			 <p>Si vous avez des questions ou avez besoin de plus amples informations, veuillez
+n'hésitez pas à nous contacter.</p>
 		  </div>
 		  <!-- end section-title -->
 		  <ul class="contact-box">
-		  <li><h6>ADDRESS</h6> <span>YourGym Lytham Limited<br>
-Units 1-3 Lytham Trade Park</span></li>
-			  <li><h6>PHONE</h6> <a href="#">+1 653 5869</a></li>
-			  <li><h6>E-MAIL</h6> <a href="#">hellow@quanca.co.uk</a></li>
+		  <li><h6>ADDRESS</h6> <span>
+Rue 324, Agadir 80000, Morocco</span></li>
+			  <li><h6>PHONE</h6> <a href="#">Rue 324, Agadir 80000, Morocco</a></li>
+			  <li><h6>E-MAIL</h6> <a href="#">info@coachissam.com</a></li>
 		  </ul>
       </div>
       <!-- end col-6 -->
@@ -22,23 +21,23 @@ Units 1-3 Lytham Trade Park</span></li>
          <div class="contact-form">
 			<form>
 			 <div class="form-group">
-				<input type="text" placeholder="Complete Name">
+				<input type="text" placeholder="Votre Nom">
 				</div>
 				<!-- end form-group -->
 			 <div class="form-group">
-				<input type="text" placeholder="E-mail Address">
+				<input type="text" placeholder="E-mail">
 				</div>
 				<!-- end form-group -->
 			 <div class="form-group">
-				<input type="text" placeholder="Phone Number">
+				<input type="text" placeholder="Telephone">
 				</div>
 				<!-- end form-group -->
 			 <div class="form-group">
-				<textarea placeholder="Your Message"></textarea>
+				<textarea placeholder="Votre Message"></textarea>
 				</div>
 				<!-- end form-group -->
 				<div class="form-group">
-					<input type="submit" value="SEND MESSAGE">
+					<input type="submit" value="ENVOYEZ">
 				</div>
 				<!-- end form-group -->
 			 </form>
@@ -51,3 +50,175 @@ Units 1-3 Lytham Trade Park</span></li>
   </div>
   <!-- end container --> 
 </section>
+
+<script>
+(function ($) {
+  $(document).ready(function () {
+    "use strict";
+
+
+    // TAB
+    $(".tab-nav li").on('click', function (e) {
+      $(".tab-item").hide();
+      $(".tab-nav li").removeClass('active');
+      $(this).addClass("active");
+      var selected_tab = $(this).find("a").attr("href");
+      $(selected_tab).stop().show();
+      return false;
+    });
+
+
+    // LOGO HOVER
+    $(".site-menu ul li").hover(function () {
+        $('.site-menu ul li').not(this).css({
+          "opacity": "0.3"
+        });
+      },
+      function () {
+        $('.site-menu ul li').not(this).css({
+          "opacity": "1"
+        });
+      });
+
+
+    // HAMBURGER MENU
+    $('.hamburger-menu').on('click', function (e) {
+      $(this).toggleClass('open');
+      $(".side-widget").toggleClass('active');
+      $("body").toggleClass("overflow");
+    });
+
+
+    // PAGE TRANSITION
+    $('body a').on('click', function (e) {
+
+      var target = $(this).attr('target');
+      var fancybox = $(this).data('fancybox');
+      var url = this.getAttribute("href");
+      if (target != '_blank' && typeof fancybox == 'undefined' && url.indexOf('#') < 0) {
+
+
+        e.preventDefault();
+        var url = this.getAttribute("href");
+        if (url.indexOf('#') != -1) {
+          var hash = url.substring(url.indexOf('#'));
+
+
+          if ($('body ' + hash).length != 0) {
+            $('.page-transition').removeClass("active");
+
+
+          }
+        } else {
+          $('.page-transition').toggleClass("active");
+          setTimeout(function () {
+            window.location = url;
+          }, 1000);
+
+        }
+      }
+    });
+
+
+  });
+  // END DOCUMENT READY
+
+  // DATA BACKGROUND IMAGE
+  var pageSection = $("*");
+  pageSection.each(function (indx) {
+    if ($(this).attr("data-background")) {
+      $(this).css("background", "url(" + $(this).data("background") + ")");
+    }
+  });
+
+
+
+  // DATA BACKGROUND COLOR
+  var pageSection = $("*");
+  pageSection.each(function (indx) {
+    if ($(this).attr("data-background")) {
+      $(this).css("background", $(this).data("background"));
+    }
+  });
+
+
+  // WOW ANIMATION 
+  wow = new WOW({
+    animateClass: 'animated',
+    offset: 0
+  });
+  wow.init();
+
+
+  // CAROUSEL CLASSES SLIDER
+  var swiper = new Swiper('.carousel-classes', {
+    slidesPerView: '3',
+    spaceBetween: 30,
+    loop: 'true',
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+	   breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 15,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    }
+  });
+
+
+  // MAIN SLIDER
+  var swiper = new Swiper('.main-slider', {
+    slidesPerView: '1',
+    spaceBetween: 0,
+    speed: 600,
+    loop: 'true',
+    touchRatio: 0,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      prevEl: '.button-prev',
+      nextEl: '.button-next',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+
+
+  // COUNTER
+  $(document).scroll(function () {
+    $('.odometer').each(function () {
+      var parent_section_postion = $(this).closest('section').position();
+      var parent_section_top = parent_section_postion.top;
+      if ($(document).scrollTop() > parent_section_top - 300) {
+        if ($(this).data('status') == 'yes') {
+          $(this).html($(this).data('count'));
+          $(this).data('status', 'no');
+        }
+      }
+    });
+  });
+
+
+  // PRELOADER
+  $(window).load(function () {
+    $("body").addClass("page-loaded");
+  });
+
+
+})(jQuery);
+
+</script>

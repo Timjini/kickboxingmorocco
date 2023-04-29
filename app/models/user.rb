@@ -13,7 +13,7 @@ class User < ApplicationRecord
       "/avatr.png"
     end
   end
-
+  
   def avatar_profile 
     if avatar.attached?
       avatar
