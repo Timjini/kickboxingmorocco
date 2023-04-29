@@ -3098,3 +3098,26 @@ button[type="submit"] i {
     margin-bottom: 50px;
   }
 }
+
+
+.login-bg{
+  background-image: url(https://images.unsplash.com/photo-1610543123792-135b26601797?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+  /* no repeat */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+}
+
+.login-bg-content{
+  background-color: #000;
+  color:#f5f5f5;
+}
+
+.login-btn {
+  background: #bf0e08!important;
+  color:#f5f5f5;
+}
+
+.login-btn:hover {
+  background: #ccc!important;
+}
