@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
   def avatar_thumbnail
     if avatar.attached?
-      avatar
-    else
+      avatar.variant(resize_to_fill: [40, 40]).processed
+        else
       "/avatr.png"
     end
   end

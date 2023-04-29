@@ -44,7 +44,7 @@ gem 'i18n', '~> 1.8'
 # image processing
 gem 'mini_magick'
 
-
+gem 'image_processing', '~> 1.2'
 
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
