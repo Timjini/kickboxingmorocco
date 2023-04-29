@@ -9,6 +9,11 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+# devise gem
+gem 'devise'
+
+gem 'activestorage'
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 # gem 'mongoid', '~> 7.0'
@@ -35,6 +40,11 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 
 gem 'i18n', '~> 1.8'
+
+# image processing
+gem 'mini_magick'
+
+
 
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]

@@ -8,4 +8,8 @@ class HomeController < ApplicationController
         @pagename = "About"
     end
 
+    def index
+        @user = current_user
+    end
+
 end
