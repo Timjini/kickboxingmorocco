@@ -19,6 +19,9 @@ gem "pg", "~> 1.1"
 # gem 'bson_ext'
 gem 'font-awesome-sass'
 
+gem 'sweetalert2'
+
+
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
