@@ -13,6 +13,8 @@ gem "sprockets-rails"
 # user authentication
 gem 'devise'
 
+gem 'activestorage'
+
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 # gem 'mongoid', '~> 7.0'
@@ -43,6 +45,10 @@ gem "redis", "~> 4.0"
 
 gem 'i18n', '~> 1.8'
 
+gem 'sendgrid-ruby'
+
+# dotenv
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
