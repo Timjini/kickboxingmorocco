@@ -9,7 +9,6 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-
 # user authentication
 gem 'devise'
 
@@ -49,6 +48,7 @@ gem 'sendgrid-ruby'
 
 # dotenv
 gem 'dotenv-rails', groups: [:development, :test]
+
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
