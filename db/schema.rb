@@ -10,9 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_28_112855) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_04_202032) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coaches", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "username"
+    t.string "phone"
+    t.string "address"
+    t.string "city"
+    t.string "country"
+    t.string "avatar"
+    t.date "dob"
+    t.string "experience"
+    t.string "status"
+    t.string "groups"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_coaches_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_coaches_on_reset_password_token", unique: true
+  end
+
+  create_table "individual_sessions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "coach_id", null: false
+    t.date "session_date"
+    t.time "session_time"
+    t.integer "duration"
+    t.string "location"
+    t.string "status"
+    t.string "booking_type"
+    t.string "payment_status"
+    t.string "payment_method"
+    t.string "payment_id"
+    t.string "payment_amount"
+    t.string "payment_currency"
+    t.string "payment_description"
+    t.string "client_full_name"
+    t.string "client_email"
+    t.string "client_phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coach_id"], name: "index_individual_sessions_on_coach_id"
+    t.index ["user_id"], name: "index_individual_sessions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,4 +86,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_28_112855) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "individual_sessions", "coaches"
+  add_foreign_key "individual_sessions", "users"
 end

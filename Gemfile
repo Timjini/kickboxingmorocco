@@ -47,6 +47,10 @@ gem 'i18n', '~> 1.8'
 
 gem 'sendgrid-ruby'
 
+gem 'active_model_serializers'
+
+gem 'rack-cors'
+
 # dotenv
 gem 'dotenv-rails', groups: [:development, :test]
 

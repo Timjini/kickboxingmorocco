@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class Coach < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
