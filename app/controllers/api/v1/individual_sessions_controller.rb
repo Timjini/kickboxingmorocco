@@ -3,13 +3,22 @@ module Api
     module V1
         class IndividualSessionsController < ApplicationController
 
+          include IndividualSessionsHelper
+
 
             def create
                 individual_session = IndividualSession.new(individual_session_params)
                 
+                user = User.find_by(email: individual_session_params[:client_email])
+
+                if user.nil?
+                  create_single_booking_user(user,individual_session_params[:client_email])
+                else
+                  individual_session.user_id = user.id
+                end
+                
                 if individual_session.save
-                    
-                    render json: individual_session, status: :created, serializer: Api::V1::IndiviualSessionsSerializer
+                    render json: individual_session, status: :created, serializer: Api::V1::IndividualSessionsSerializer
                   else
                     render json: { errors: individual_session.errors.full_messages }, status: :unprocessable_entity
                   end
