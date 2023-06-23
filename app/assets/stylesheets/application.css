@@ -83,6 +83,7 @@ theme.
 
 */
 @import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
 @font-face {
   font-family: 'Mohave';
   src: url("../fonts/Mohave-Bold.eot");
@@ -857,7 +858,7 @@ button[type="submit"] i {
   display: inline-block;
 }
 .navbar .logo a img {
-  height: 150px;
+  height: 120px;
 }
 .navbar .site-menu {
   margin: 0 auto;
@@ -1123,6 +1124,7 @@ button[type="submit"] i {
   flex-wrap: wrap;
   padding: 100px 0;
   position: relative;
+  background-color: #000;
 }
 .content-section.left-white-spacing {
   position: relative;
@@ -1181,7 +1183,7 @@ button[type="submit"] i {
   margin-bottom: 15px;
 }
 .section-title figure img {
-  height: 40px;
+  height: 100px;
 }
 .section-title h6 {
   width: 100%;
@@ -1193,6 +1195,7 @@ button[type="submit"] i {
   margin-bottom: 0;
   font-size: 70px;
   color: #bf0e08;
+  font-family: 'Carter One', cursive;
 }
 .section-title p {
   width: 100%;
@@ -1262,6 +1265,7 @@ button[type="submit"] i {
   font-size: 70px;
   font-weight: 500;
   color: #bf0e08;
+  font-family: 'Carter One', cursive;
 }
 .side-content h6 {
   width: 100%;
@@ -3097,4 +3101,12 @@ button[type="submit"] i {
   .col-lg-3:nth-child(3) .branch-box {
     margin-bottom: 50px;
   }
+}
+
+.hidden{
+  display:none;
+}
+
+.circle-img{
+  border-radius: 50%;
 }

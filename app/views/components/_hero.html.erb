@@ -1,99 +1,9 @@
 
-<section class="content-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title wow fade">
-          <figure>
-          <%= image_tag "issam-logo.png" %>
-          </figure>
-          <h2>POURQUOI KBM ?</h2>
-          <p>Kickboxing Morocco offre des cours de kickboxing de haute qualité
-           enseignés par des instructeurs expérimentés, ce qui en fait un choix
-            idéal pour les amateurs de sports de combat qui cherchent à améliorer leurs compétences.</p>
-        </div>
-        <!-- end section-title --> 
-      </div>
-      <!-- end col-12 --> 
-    </div>
-    <!-- end row -->
-    <div class="row justify-content-center">
-      <div class="col-lg-4 col-md-6">
-        <div class="image-box">
-          <figure class="wow reveal-effect">
-          <%= image_tag "insta-12.png" %>
-          </figure>
-          <span class="time">18:00 - LUNDI</span>
-          <h6>KICKBOXE</h6>
-        </div>
-        <!-- end image-box --> 
-      </div>
-      <!-- end col-4 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="image-box">
-          <figure class="wow reveal-effect">          
-          <%= image_tag ("insta-12.png") %>
-          </figure>
-          <span class="time">20:00 - JEUDI </span>
-          <h6>PRO</h6>
-        </div>
-        <!-- end image-box --> 
-      </div>
-      <!-- end col-4 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="image-box">
-          <figure class="wow reveal-effect">          
-            <%= image_tag "insta-14.png" %>
-          </figure>
-          <span class="time">10:00 - SAMEDI </span>
-          <h6> JUNIORS</h6>
-        </div>
-        <!-- end image-box --> 
-      </div>
-      <!-- end col-4 --> 
-    </div>
-    <!-- end row --> 
-  </div>
-  <!-- end container --> 
-</section>
+<%= render 'components/program_cards'%>
 <!-- end content-section -->
-<section class="content-section no-spacing" data-background="#fafafa">
-  <div class="container">
-    <div class="row align-items-center no-gutters">
-      <div class="col-lg-6">
-        <div class="side-content left wow fade">
-          <h6>TEAM KBM</h6>
-          <h2>REJOINS NOTRE<br>
-            ÉQUIPE</h2>
-          <p>En plus de son excellent programme de kickboxing, Kickboxing Morocco propose 
-          une ambiance conviviale et une communauté accueillante, ce qui en fait un choix idéal
-           pour ceux qui cherchent une expérience de fitness sociale et stimulante.</p>
-          <a href="#" class="custom-button">VOIR LES HORAIRES</a> </div>
-        <!-- end side-content --> 
-      </div>
-      <!-- end col-6 -->
-      <div class="col-lg-6">
-        <figure class="side-image full-right wow reveal-effect">
-			<ul class="side-timetable">
-			<li><span>LUNDI</span> <b> 10:00 - 23:00</b></li>
-			<li><span>MARDI</span> <b> 10:00 - 23:00</b></li>
-			<li><span>MERCREDI</span> <b> 10:00 - 23:00</b></li>
-			<li><span>JEUDI</span> <b> 10:00 - 23:00</b></li>
-			<li><span>VENDREDI</span> <b> 10:00 - 23:00</b></li>
-			<li><span>SAMEDI</span> <b> 10:00 - 23:00</b></li>
-			<li><span>DIMANCH</span> <b> 10:00 - 23:00</b></li>
-			</ul>    
-        <%= image_tag "side-image01.jpg" %>
-			  </figure>
-      </div>
-      <!-- end col-6 --> 
-    </div>
-    <!-- end row --> 
-  </div>
-  <!-- end container --> 
-</section>
+<%= render 'components/weekly_plan'%>
 <!-- end content-section -->
-<section class="content-section" data-background="#fafafa">
+<section class="content-section hidden" data-background="#fafafa">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-4 col-md-6">
@@ -189,7 +99,7 @@
 </section>
 <!-- end content-section -->
 <!-- end content-section -->
-<section class="content-section">
+<section class="content-section hidden">
   <div class="container">
     <div class="row">
       <div class="col-12">
