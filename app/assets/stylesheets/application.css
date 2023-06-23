@@ -666,7 +666,7 @@ button[type="submit"] i {
   margin-bottom: 40px;
 }
 .side-widget .logo img {
-  height: 109px;
+  height: 150px;
 }
 .side-widget .show-mobile {
   display: none;
@@ -857,7 +857,7 @@ button[type="submit"] i {
   display: inline-block;
 }
 .navbar .logo a img {
-  height: 60px;
+  height: 150px;
 }
 .navbar .site-menu {
   margin: 0 auto;
