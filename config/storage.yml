@@ -32,3 +32,7 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+dropbox:
+  service: Dropbox
+  access_token: "sl.Bg3RkJV9YpI_rN8ZWmOYoczgfw84K97vaBcNw8HYT5BTvcEMrzUGRqz6MZI-vkFdEsfsM1jImiu9LRLu7h_uXsqiBhjLLyB6lLVP4UCzj14AALTUTJmjk2DVodI3q_mMLX2PoMo"

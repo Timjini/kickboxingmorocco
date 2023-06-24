@@ -51,6 +51,8 @@ gem 'active_model_serializers'
 
 gem 'rack-cors'
 
+gem 'activestorage-dropbox'
+
 # dotenv
 gem 'dotenv-rails', groups: [:development, :test]
 
