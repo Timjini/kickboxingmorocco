@@ -23,6 +23,8 @@ gem 'font-awesome-sass'
 
 gem 'sweetalert2'
 
+gem 'image_processing', '~> 1.2'
+
 
 
 # Use the Puma web server [https://github.com/puma/puma]
