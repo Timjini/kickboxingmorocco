@@ -3110,3 +3110,27 @@ button[type="submit"] i {
 .circle-img{
   border-radius: 50%;
 }
+
+.page-header{
+  background-image: url(/assets/boxing-glove.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  max-height: 400px;
+}
+
+.question-one{
+  display:flex;
+  flex-direction: row;
+  /* wrap */
+  flex-wrap: wrap;
+}
+
+.form-check-input{
+  transform: translateY(0px)!important;
+}
+
+.enquete{
+  background-color: #000;
+  color: #f0f0f0;
+}
