@@ -1,0 +1,248 @@
+<style>
+body{
+    background-color:#000;
+}
+
+.lead-container{
+    background-color: #f5f5f5;
+    padding:20px;
+    color:#000;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    opacity:0.9;
+}
+
+form{
+    margin-bottom:50px;
+}
+
+input[type="radio"]:checked {
+    border: 6px solid red!important;
+}
+
+input[type="checkbox"]:checked {
+    border: 6px solid red!important;
+}
+
+h4:hover {
+  background: rgb(191, 14, 8);
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+</style>
+
+<%= render "components/header"%>
+<div class="container pt-5 enquete">
+  <div class="lead-container">
+    <p class="lead"> Chers parents,
+        dans le cadre de maintenir notre qualité de service et afin de vous écouter et maintenir votre satisfaction,
+        L’équipe Kickboxing Morocco ont mis en place un questionnaire ou nous invitons chaleureusement à y répondre ci-dessous : 
+    </p>
+  </div>
+
+    <form >
+    <!---------------------------- First Question ----------------------------------------------------------->
+      <div class="question-one-title">
+        <h4><strong>1.</strong> Dans une échelle de 1 à 5,êtes-vous satisfait de la qualité de service à notre salle:</h4><br>
+      </div>
+      <div class= "question-one pb-5">
+        <div class="form-check m-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label mx-2" for="flexRadioDefault1">
+                Insatisfait
+            </label>
+        </div>
+        <div class="form-check m-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label mx-2" for="flexRadioDefault1">
+                Insatisfait
+            </label>
+        </div>
+        <div class="form-check m-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label mx-2" for="flexRadioDefault1">
+                Neutre
+            </label>
+        </div>
+        <div class="form-check m-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label mx-2" for="flexRadioDefault1">
+                Satisfait
+            </label>
+        </div>
+        <div class="form-check m-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label mx-2" for="flexRadioDefault1">
+                Très Satisfait
+            </label>
+        </div>
+      </div>  
+        <!---------------------------- End of First question ---------------------------------------------------->
+
+      <div class="question-two-title">
+        <h4><strong>2.</strong> D’après vous,quels sont les éléments de valeur que nous rapportons à votre enfant :</h4><br>
+      </div>
+      <!---------------------------- Second Question ----------------------------------------------------------->
+      <div class="question-two pb-5">
+
+        <div class="form-check m-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label mx-2" for="flexCheckDefault">
+                Technique
+            </label>
+        </div>
+        <div class="form-check m-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label mx-2" for="flexCheckDefault">
+                Discipline et contrôle de soi
+            </label>
+        </div>
+        <div class="form-check m-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label mx-2" for="flexCheckDefault">
+                Force et endurance
+            </label>
+        </div>
+         <div class="form-check m-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label mx-2" for="flexCheckDefault">
+                Compétence d’auto défense
+            </label>
+        </div>
+         <div class="form-check m-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label mx-2" for="flexCheckDefault">
+                Amélioration de la confiance en soi
+            </label>
+        </div>
+        <div class="form-check m-2">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label mx-2" for="flexCheckDefault">
+                Activités Amusantes 
+            </label>
+        </div>
+      </div>
+      <!---------------------------- End of Second question ---------------------------------------------------->
+
+        <!---------------------------- Third Question ----------------------------------------------------------->
+        <div class="question-three-title">
+            <h4><strong>3.</strong> Comment évaluez-vous la qualité des instructions fourni par les coaches ?</h4><br>
+        </div>
+        <div class="question-one pb-5">
+            <div class="form-check m-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label mx-2" for="flexRadioDefault1">
+                    Médiocre
+                </label>
+            </div>
+            <div class="form-check m-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label mx-2" for="flexRadioDefault1">
+                    Moyenne
+                </label>
+            </div>
+            <div class="form-check m-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label mx-2" for="flexRadioDefault1">
+                    Bonne
+                </label>
+            </div>
+            <div class="form-check m-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label mx-2" for="flexRadioDefault1">
+                    Excellente
+                </label>
+            </div>
+        </div>
+        <!---------------------------- End of Third question ---------------------------------------------------->
+
+        <!---------------------------- Fourth Question ---------------------------------------------------------->
+        <div class="question-three-title">
+            <h4><strong>4.</strong> D’après vous,quelle sont les raisons qui empêchent vos enfants de garder leur discipline d’entraînement ?</h4><br>
+        </div>
+
+        <div class="question-three pb-5">
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Laissez un commentaire ici" id="floatingTextarea2" style="height: 100px"></textarea>
+            </div>
+        </div>
+        <!---------------------------- End of Fouth question ---------------------------------------------------->
+
+        <!---------------------------- Fifth Question ---------------------------------------------------------->
+        <div class="question-three-title">
+            <h4><strong>5.</strong>Quelle est votre intention pour pratiquer ce sport ?  </h4><br>
+        </div>
+
+        <div class="question-three pb-5">
+            <div class="question-one">
+                <div class="form-check m-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label mx-2" for="flexRadioDefault1">
+                    Je le fais pour le plaisir et mon bien être
+                </label>
+            </div>
+            <div class="form-check m-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label mx-2" for="flexRadioDefault1">
+                    Je souhaite participer à des compétitions( si vous choisissez cette option veuillez nous indiquez votre objectif en quelques mots)
+                </label>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Laissez un commentaire ici" id="floatingTextarea2" style="height: 100px"></textarea>
+            </div>
+            </div>
+        </div>
+        <!---------------------------- End of Fifth question ---------------------------------------------------->
+
+
+
+        <!---------------------------- Sixest Question ----------------------------------------------------------->
+
+        <div class="question-three-title">
+            <h4><strong>6.</strong> Est ce que vous aurez tendance à recommander notre salle à d’autres parents qui souhaitent prendre de cours pour leurs enfants ? </h4><br>
+        </div>
+
+        <div class="question-three pb-5">
+            <div class="question-one">
+                <div class="form-check m-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label mx-2" for="flexRadioDefault1">
+                    Absolument
+                </label>
+            </div>
+            <div class="form-check m-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label mx-2" for="flexRadioDefault1">
+                    Jamais
+                </label>
+            </div>
+            </div>
+        </div>
+        <!---------------------------- End of Sixest question ---------------------------------------------------->
+
+
+      <!---------------------------- Seventh Question ----------------------------------------------------------->
+        <div class="question-three-title">
+            <h4><strong>7.</strong> Avez-vous des demandes ou suggestions à partager avec nous pour améliorer notre qualité de service ?</h4><br>
+        </div>
+
+        <div class="question-three pb-5">
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Laissez un commentaire ici" id="floatingTextarea2" style="height: 100px"></textarea>
+            </div>
+        </div>
+      <!---------------------------- End of Seventh question ---------------------------------------------------->
+      <button class="custom-button"> Envoyer</button>
+    </form>
+</div>

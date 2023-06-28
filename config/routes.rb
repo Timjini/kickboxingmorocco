@@ -8,6 +8,16 @@ Rails.application.routes.draw do
   get "/about" => "home#about"
   get "/enquete" => "home#enquete"
 
+
+  
+  resources :questionnaires do
+    resources :answers
+    get 'enquete', to: 'questionnaires#enquete', on: :collection
+  end
+
+
+
+
   # api routes
   namespace :api do
     namespace :v1 do
