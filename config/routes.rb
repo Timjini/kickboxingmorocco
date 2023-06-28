@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get "/contact" => "home#contact"
   get "/about" => "home#about"
+  get "/enquete" => "home#enquete"
 
   # api routes
   namespace :api do

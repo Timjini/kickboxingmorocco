@@ -8,4 +8,8 @@ class HomeController < ApplicationController
         @pagename = "About"
     end
 
+    def enquete
+        @pagename = "Enquete"
+    end
+
 end
