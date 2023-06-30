@@ -12,4 +12,7 @@ class HomeController < ApplicationController
         @pagename = "Enquete"
     end
 
+    def merci
+    end
+
 end

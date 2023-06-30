@@ -1,15 +1,31 @@
 <style>
 body{
-    background-color:#000;
+    background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.container{
+    background-color:transparent;
 }
 
 .lead-container{
-    background-color: #f5f5f5;
     padding:20px;
-    color:#000;
     margin-bottom: 50px;
-    border-radius: 20px;
-    opacity:0.9;
+    /* shadow */
+}
+
+.box {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;  
+  border-radius: 5px;
+  color: #fff;
 }
 
 form{
@@ -24,27 +40,13 @@ input[type="checkbox"]:checked {
     border: 6px solid red!important;
 }
 
-h4:hover {
-  background: rgb(191, 14, 8);
-  animation: slideIn 0.5s forwards;
-}
 
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
 </style>
 
 <%= render "components/header"%>
 <div class="container pt-5 enquete">
-  <div class="lead-container">
+  <div class="lead-container box">
     <p class="lead"> Chers parents,
         dans le cadre de maintenir notre qualité de service et afin de vous écouter et maintenir votre satisfaction,
         L’équipe Kickboxing Morocco ont mis en place un questionnaire ou nous invitons chaleureusement à y répondre ci-dessous : 
@@ -52,88 +54,89 @@ h4:hover {
   </div>
 
     <form >
-    <!---------------------------- First Question ----------------------------------------------------------->
-      <div class="question-one-title">
-        <h4><strong>1.</strong> Dans une échelle de 1 à 5,êtes-vous satisfait de la qualité de service à notre salle:</h4><br>
-      </div>
-      <div class= "question-one pb-5">
-        <div class="form-check m-2">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label mx-2" for="flexRadioDefault1">
-                Insatisfait
-            </label>
-        </div>
-        <div class="form-check m-2">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label mx-2" for="flexRadioDefault1">
-                Insatisfait
-            </label>
-        </div>
-        <div class="form-check m-2">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label mx-2" for="flexRadioDefault1">
-                Neutre
-            </label>
-        </div>
-        <div class="form-check m-2">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label mx-2" for="flexRadioDefault1">
-                Satisfait
-            </label>
-        </div>
-        <div class="form-check m-2">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label mx-2" for="flexRadioDefault1">
-                Très Satisfait
-            </label>
-        </div>
-      </div>  
-        <!---------------------------- End of First question ---------------------------------------------------->
+<!---------------------------- First Question ----------------------------------------------------------->
+<div class="question-one-title">
+  <h4><strong>1.</strong> Dans une échelle de 1 à 5, êtes-vous satisfait de la qualité de service à notre salle :</h4><br>
+</div>
+<div class="question-one pb-5">
+  <div class="form-check m-2">
+    <input class="form-check-input" type="radio" name="satisfactionRating" id="flexRadioDefault1">
+    <label class="form-check-label mx-2" for="flexRadioDefault1">
+      Insatisfait
+    </label>
+  </div>
+  <div class="form-check m-2">
+    <input class="form-check-input" type="radio" name="satisfactionRating" id="flexRadioDefault2">
+    <label class="form-check-label mx-2" for="flexRadioDefault2">
+      Insatisfait
+    </label>
+  </div>
+  <div class="form-check m-2">
+    <input class="form-check-input" type="radio" name="satisfactionRating" id="flexRadioDefault3">
+    <label class="form-check-label mx-2" for="flexRadioDefault3">
+      Neutre
+    </label>
+  </div>
+  <div class="form-check m-2">
+    <input class="form-check-input" type="radio" name="satisfactionRating" id="flexRadioDefault4">
+    <label class="form-check-label mx-2" for="flexRadioDefault4">
+      Satisfait
+    </label>
+  </div>
+  <div class="form-check m-2">
+    <input class="form-check-input" type="radio" name="satisfactionRating" id="flexRadioDefault5">
+    <label class="form-check-label mx-2" for="flexRadioDefault5">
+      Très Satisfait
+    </label>
+  </div>
+</div>  
+<!---------------------------- End of First question ---------------------------------------------------->
 
-      <div class="question-two-title">
-        <h4><strong>2.</strong> D’après vous,quels sont les éléments de valeur que nous rapportons à votre enfant :</h4><br>
-      </div>
-      <!---------------------------- Second Question ----------------------------------------------------------->
-      <div class="question-two pb-5">
+<div class="question-two-title">
+  <h4><strong>2.</strong> D’après vous, quels sont les éléments de valeur que nous rapportons à votre enfant :</h4><br>
+</div>
+<!---------------------------- Second Question ----------------------------------------------------------->
+<div class="question-two pb-5">
 
-        <div class="form-check m-2">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label mx-2" for="flexCheckDefault">
-                Technique
-            </label>
-        </div>
-        <div class="form-check m-2">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label mx-2" for="flexCheckDefault">
-                Discipline et contrôle de soi
-            </label>
-        </div>
-        <div class="form-check m-2">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label mx-2" for="flexCheckDefault">
-                Force et endurance
-            </label>
-        </div>
-         <div class="form-check m-2">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label mx-2" for="flexCheckDefault">
-                Compétence d’auto défense
-            </label>
-        </div>
-         <div class="form-check m-2">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label mx-2" for="flexCheckDefault">
-                Amélioration de la confiance en soi
-            </label>
-        </div>
-        <div class="form-check m-2">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label mx-2" for="flexCheckDefault">
-                Activités Amusantes 
-            </label>
-        </div>
-      </div>
-      <!---------------------------- End of Second question ---------------------------------------------------->
+  <div class="form-check m-2">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" name="valueElements">
+    <label class="form-check-label mx-2" for="flexCheckDefault1">
+      Technique
+    </label>
+  </div>
+  <div class="form-check m-2">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" name="valueElements">
+    <label class="form-check-label mx-2" for="flexCheckDefault2">
+      Discipline et contrôle de soi
+    </label>
+  </div>
+  <div class="form-check m-2">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" name="valueElements">
+    <label class="form-check-label mx-2" for="flexCheckDefault3">
+      Force et endurance
+    </label>
+  </div>
+  <div class="form-check m-2">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4" name="valueElements">
+    <label class="form-check-label mx-2" for="flexCheckDefault4">
+      Compétence d’auto-défense
+    </label>
+  </div>
+  <div class="form-check m-2">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" name="valueElements">
+    <label class="form-check-label mx-2" for="flexCheckDefault5">
+      Amélioration de la confiance en soi
+    </label>
+  </div>
+  <div class="form-check m-2">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault6" name="valueElements">
+    <label class="form-check-label mx-2" for="flexCheckDefault6">
+      Activités amusantes
+    </label>
+  </div>
+</div>
+<!---------------------------- End of Second question ---------------------------------------------------->
+
 
         <!---------------------------- Third Question ----------------------------------------------------------->
         <div class="question-three-title">
@@ -141,25 +144,25 @@ h4:hover {
         </div>
         <div class="question-one pb-5">
             <div class="form-check m-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="qualityLevel" id="flexRadioDefault1">
                 <label class="form-check-label mx-2" for="flexRadioDefault1">
                     Médiocre
                 </label>
             </div>
             <div class="form-check m-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="qualityLevel" id="flexRadioDefault1">
                 <label class="form-check-label mx-2" for="flexRadioDefault1">
                     Moyenne
                 </label>
             </div>
             <div class="form-check m-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="qualityLevel" id="flexRadioDefault1">
                 <label class="form-check-label mx-2" for="flexRadioDefault1">
                     Bonne
                 </label>
             </div>
             <div class="form-check m-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="qualityLevel" id="flexRadioDefault1">
                 <label class="form-check-label mx-2" for="flexRadioDefault1">
                     Excellente
                 </label>
@@ -181,23 +184,26 @@ h4:hover {
 
         <!---------------------------- Fifth Question ---------------------------------------------------------->
         <div class="question-three-title">
-            <h4><strong>5.</strong> Est ce que vous sentez que nous fournissons un environnement de support et de sécurité à votre enfant ?</h4><br>
+            <h4><strong>5.</strong> Quelle est votre intention pour pratiquer ce sport ?  </h4><br>
         </div>
 
         <div class="question-three pb-5">
             <div class="question-one">
                 <div class="form-check m-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="securite" id="flexRadioDefault1">
                 <label class="form-check-label mx-2" for="flexRadioDefault1">
-                    Oui
+                    Je le fais pour le plaisir et mon bien être
                 </label>
             </div>
             <div class="form-check m-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="securite" id="flexRadioDefault1">
                 <label class="form-check-label mx-2" for="flexRadioDefault1">
-                    Non
+                    Je souhaite participer à des compétitions
                 </label>
             </div>
+            </div>
+             <div class="form-floating m-2 hidden">
+                <textarea class="form-control" placeholder="veuillez nous indiquez votre objectif en quelques mots" id="floatingTextarea2" style="height: 100px"></textarea>
             </div>
         </div>
         <!---------------------------- End of Fifth question ---------------------------------------------------->
@@ -213,13 +219,13 @@ h4:hover {
         <div class="question-three pb-5">
             <div class="question-one">
                 <div class="form-check m-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="recommandation" id="flexRadioDefault1">
                 <label class="form-check-label mx-2" for="flexRadioDefault1">
                     Absolument
                 </label>
             </div>
             <div class="form-check m-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="recommandation" id="flexRadioDefault1">
                 <label class="form-check-label mx-2" for="flexRadioDefault1">
                     Jamais
                 </label>

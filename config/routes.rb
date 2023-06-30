@@ -7,12 +7,12 @@ Rails.application.routes.draw do
   get "/contact" => "home#contact"
   get "/about" => "home#about"
   get "/enquete" => "home#enquete"
+  get "/merci" => "home#merci"
 
 
   
   resources :questionnaires do
-    resources :answers
-    get 'enquete', to: 'questionnaires#enquete', on: :collection
+    get 'enquete', to: 'questionnaires#new', on: :collection
   end
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_28_171128) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_30_210925) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -91,19 +91,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_28_171128) do
   end
 
   create_table "questionnaires", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-    t.string "question_un"
-    t.string "question_deux"
-    t.string "question_trois"
-    t.string "question_quatre"
-    t.string "question_cinq"
-    t.string "question_six"
-    t.string "question_sept"
-    t.string "questionnaire_type"
-    t.string "questionnaire_status"
+    t.text "value", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "satisfaction"
+    t.string "qualite"
+    t.string "reason"
+    t.string "attention"
+    t.string "attention_commentaire"
+    t.string "tendance"
+    t.string "suggestion"
   end
 
   create_table "users", force: :cascade do |t|
