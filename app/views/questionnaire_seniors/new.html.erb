@@ -45,6 +45,8 @@ input[type="checkbox"]:checked {
 </style>
 
 <%= render "components/header"%>
+
+
 <div class="container pt-5 enquete">
   <div class="lead-container box">
   <% if @questionnaire.errors.any? %>
@@ -57,20 +59,19 @@ input[type="checkbox"]:checked {
     </ul>
   </div>
 <% end %>
-    <p class="lead"> Chers parents,
-        dans le cadre de maintenir notre qualité de service et afin de vous écouter et maintenir votre satisfaction,
-        L’équipe Kickboxing Morocco ont mis en place un questionnaire ou nous invitons chaleureusement à y répondre ci-dessous : 
+    <p class="lead"> Chers clients,
+dans le cadre de maintenir notre qualité de service et afin de vous écouter et maintenir votre satisfaction,L’équipe Kickboxing Morocco ont mis en place un questionnaire ou nous invitons chaleureusement à y répondre ci-dessous :
     </p>
   </div>
 
-<%= form_with(model: @questionnaire, url: questionnaires_path, method: :post) do |f| %>
+<%= form_with(model: @questionnaire, url: questionnaire_seniors_path, method: :post) do |f| %>
 
 <!---------------------------- First Question ----------------------------------------------------------->
 <div class="question-one-title">
   <h4><strong>1.</strong> Dans une échelle de 1 à 5, êtes-vous satisfait de la qualité de service à notre salle :</h4><br>
 </div>
 <div class="question-one pb-5">
-  <%= f.collection_radio_buttons :satisfaction, Questionnaire.satisfactions, :first, :last do |b| %>
+  <%= f.collection_radio_buttons :satisfaction, QuestionnaireSenior.satisfactions, :first, :last do |b| %>
   <%= b.label class: "form-check-label mx-3" do %>
     <%= b.radio_button class: "form-check-input" %>
     <%= b.text %>
@@ -87,7 +88,7 @@ input[type="checkbox"]:checked {
 <!---------------------------- Second Question ----------------------------------------------------------->
 <div class="question-two pb-5">
   <div style="display:flex;flex-direction:column;">
-    <% Questionnaire::VALUES.each do |key| %>
+    <% QuestionnaireSenior::VALUES.each do |key| %>
       <div>
         <%= f.check_box :value, { multiple: true }, key %>
         <%= f.label key %>
@@ -104,7 +105,7 @@ input[type="checkbox"]:checked {
             <h4><strong>3.</strong> Comment évaluez-vous la qualité des instructions fourni par les coaches ?</h4><br>
         </div>
         <div class="question-one pb-5">
-           <%= f.collection_radio_buttons :qualite, Questionnaire.qualites, :first, :last do |b| %>
+           <%= f.collection_radio_buttons :qualite, QuestionnaireSenior.qualites, :first, :last do |b| %>
             <%= b.label class: "form-check-label mx-3" do %>
               <%= b.radio_button class: "form-check-input" %>
               <%= b.text %>
@@ -115,47 +116,58 @@ input[type="checkbox"]:checked {
 
         <!---------------------------- Fourth Question ---------------------------------------------------------->
         <div class="question-three-title">
-            <h4><strong>4.</strong> D’après vous,quelle sont les raisons qui empêchent vos enfants de garder leur discipline d’entraînement ?</h4><br>
+            <h4><strong>4.</strong> Quel type de discipline que vous préférez le plus?</h4><br>
         </div>
 
         <div class="question-three pb-5">
-            <div class="form-floating">
-              <%= f.text_area :reason, class: "form-control", placeholder: "Laissez un commentaire ici", id: "floatingTextarea2", style: "height: 100px" %>
+            <div style="display:flex;flex-direction:column;">
+                <% QuestionnaireSenior::DISCIPLINES.each do |key| %>
+                <div>
+                    <%= f.check_box :value, { multiple: true }, key %>
+                    <%= f.label key %>
+                </div>
+                <% end %>
             </div>
         </div>
         <!---------------------------- End of Fouth question ---------------------------------------------------->
 
         <!---------------------------- Fifth Question ---------------------------------------------------------->
         <div class="question-three-title">
-            <h4><strong>5.</strong> Quelle est votre intention pour pratiquer ce sport ?  </h4><br>
+            <h4><strong>5.</strong> Est ce que vous sentez que nous fournissons un environnement de support et de sécurité pour vous ai sein de notre gym?</h4><br>
         </div>
 
         <div class="question-three pb-5">
             <div class="question-one">
-             <%= f.collection_radio_buttons :attention, Questionnaire.attentions, :first, :last do |b| %>
+             <%= f.collection_radio_buttons :securite, QuestionnaireSenior.securites, :first, :last do |b| %>
             <%= b.label class: "form-check-label mx-3" do %>
               <%= b.radio_button class: "form-check-input" %>
               <%= b.text %>
             <% end %>
           <% end %>
             </div>
-             <div class="form-floating m-2">
-                <%= f.text_area :attention_commentaire , class: "form-control", placeholder: "Laissez un commentaire ici", id: "floatingTextarea2", style: "height: 100px" %>
-            </div>
         </div>
         <!---------------------------- End of Fifth question ---------------------------------------------------->
 
 
-
-        <!---------------------------- Sixest Question ----------------------------------------------------------->
-
         <div class="question-three-title">
-            <h4><strong>6.</strong> Est ce que vous aurez tendance à recommander notre salle à d’autres parents qui souhaitent prendre de cours pour leurs enfants ? </h4><br>
+            <h4><strong>6.</strong> Qu’est ce qui vous plait le plus dans notre gym ? </h4><br>
         </div>
 
         <div class="question-three pb-5">
             <div class="question-one">
-              <%= f.collection_radio_buttons :tendance, Questionnaire.tendances, :first, :last do |b| %>
+              <%= f.text_area :gym_commentaire, class: "form-control" %>
+            </div>
+        </div>
+
+        <!---------------------------- Sixest Question ----------------------------------------------------------->
+
+        <div class="question-three-title">
+            <h4><strong>7.</strong> Est ce que vous aurez tendance à recommander notre salle à d’autres parents qui souhaitent prendre de cours pour leurs enfants ? </h4><br>
+        </div>
+
+        <div class="question-three pb-5">
+            <div class="question-one">
+              <%= f.collection_radio_buttons :tendance, QuestionnaireSenior.tendances, :first, :last do |b| %>
             <%= b.label class: "form-check-label mx-3" do %>
               <%= b.radio_button class: "form-check-input" %>
               <%= b.text %>
@@ -168,7 +180,7 @@ input[type="checkbox"]:checked {
 
       <!---------------------------- Seventh Question ----------------------------------------------------------->
         <div class="question-three-title">
-            <h4><strong>7.</strong> Avez-vous des demandes ou suggestions à partager avec nous pour améliorer notre qualité de service ?</h4><br>
+            <h4><strong>8.</strong> Avez-vous des demandes ou suggestions à partager avec nous pour améliorer notre qualité de service ?</h4><br>
         </div>
 
         <div class="question-three pb-5">
