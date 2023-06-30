@@ -26,4 +26,8 @@ class Questionnaire < ApplicationRecord
         }
 
     VALUES = %i[technique discipline_et_controle_de_soi force_et_endurance competence_d_auto_defense amelioration_de_la_confiance_en_soi activites_amusantes autre]
+
+    validates :satisfaction, presence: true
+    validates :qualite, presence: true
+
 end
