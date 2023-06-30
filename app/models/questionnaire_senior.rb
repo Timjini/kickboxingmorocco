@@ -34,6 +34,5 @@ class QuestionnaireSenior < ApplicationRecord
 
     validates :satisfaction, presence: true
     validates :qualite, presence: true
-    validates :tendance, presence: true
 
 end
