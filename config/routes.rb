@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     get 'enquete', to: 'questionnaires#new', on: :collection
   end
 
+  resources :questionnaire_seniors do
+    get 'enquete', to: 'questionnaire_seniors#new', on: :collection
+  end
+
 
 
 
