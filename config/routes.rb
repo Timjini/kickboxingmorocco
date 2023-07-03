@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "/contact" => "home#contact"
   get "/about" => "home#about"
-  get "/enquete" => "home#enquete"
+  # get "/enquete" => "home#enquete"
   get "/merci" => "home#merci"
 
 
@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
   get "/dashboard" => "dashboards#index"
   get "/profile" => "dashboards#profile"
+  
+  resources :questionnaire_seniors do
+    get 'enquete', to: 'questionnaire_seniors#new', on: :collection
+  end
 
 
 

@@ -1,17 +1,18 @@
 
 <section class="p-5">
+        <div class="container">
   <% if current_user.present?%>
-    <div class="container">
-        <h2>Questionnaire Parent</h2>
+        <h2>Questionnaire Adultes</h2>
         <table class="table">
             <thead>
                 <tr>
                     <th>échelle satisfaction</th>
-                    <th>valeurs</th>
+                    <th>valeur</th>
                     <th>qualité</th>
-                    <th>Problem de discipline</th>
-                    <th>raison de pratique</th>
-                    <th>commentaire de competition</th>
+                    <th>disciplines</th>
+                    <th>sécurité</th>
+                    <th>commentaire</th>
+                    <th>recommandation</th>
                     <th>suggestion</th>
                 </tr>
             </thead>
@@ -25,23 +26,27 @@
                         <%= filtered_values.join(", ") %>
                     </td>
                     <td><%=key.qualite%></td>
-                    <td><%=key.reason%></td>
-                    <td><%=key.attention%></td>
-                    <td><%=key.attention_commentaire%></td>
+                    <td>
+                        <% filtered_arts = key.discipline.reject {|value| value == "0"}.map {|value| value.gsub("_", " ")}%>
+                        <%=filtered_arts.join(", ")%>
+                    </td>
+                    <td><%=key.securite%></td>
+                    <td><%=key.gym_commentaire%></td>
+                    <td><%=key.tendance%></td>
                     <td><%=key.suggestion%></td>
                 </tr>
               <%end%>
             <%end%>
             </tbody>
         </table>
-    </div>
-    <%else%>
+        <%else%>
         <div class="container">
-            <h2>Questionnaire Parent</h2>
+            <h2>Questionnaire Adultes</h2>
             <p>Vous devez être connecté pour voir les questionnaires</p>
              <a href="/users/sign_in">CONNECTEZ-VOUS</a> 
         </div>
     <%end%>
+    </div>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
