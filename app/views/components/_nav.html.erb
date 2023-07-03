@@ -1,3 +1,5 @@
+
+
 <div class="preloader" style="display:none;"> 
 	<figure>
   <%= image_tag "preloader.png" %>
@@ -82,6 +84,21 @@
     <div class="hamburger-menu"> <span></span> <span></span> <span></span> </div>
     <div class="navbar-button"> 
     <%= button_to "DECONNEXION", destroy_user_session_path, method: :delete, class: "mx-4 text-sm font-normal" %> 
+    </div>
+    <% elsif current_coach %>
+     <div class="site-menu">
+      <ul>
+        <li><a href="/">Profile</a></li>
+        <li><a href="#">Programme</a></li>
+        <li><a href="#">Reservation</a></li>
+      </ul>
+    </div>
+     <div class="h-6">
+      <%= image_tag(current_coach.photo_thumbnail, class:"circle-img h-5")%>
+    </div>
+    <div class="hamburger-menu"> <span></span> <span></span> <span></span> </div>
+    <div class="navbar-button"> 
+      <%= button_to "DECONNEXION", destroy_coach_session_path, method: :delete, class: "mx-4 text-sm font-normal" %> 
     </div>
     <% else %>
      <div class="site-menu">

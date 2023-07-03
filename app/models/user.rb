@@ -11,7 +11,7 @@ class User < ApplicationRecord
     if photo.attached?
       photo.variant(resize_to_fill: [60, 60]).processed
         else
-      "/kbm.png"
+       "/assets/user.png"
     end
   end
 
@@ -19,7 +19,7 @@ class User < ApplicationRecord
     if photo.attached?
       rails_blob_path(photo, only_path: true)
     else
-      "/kbm.png"
+       "/assets/user.png"
     end
   end
   
@@ -29,7 +29,7 @@ class User < ApplicationRecord
     if photo.attached?
       photo
         else
-      "kbm.png"
+       "/assets/user.png"
     end
   end
 
