@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     get 'enquete', to: 'questionnaires#new', on: :collection
   end
 
+  get "/dashboard" => "dashboards#index"
+  get "/profile" => "dashboards#profile"
+
 
 
 
