@@ -1,6 +1,8 @@
 class QuestionnaireSeniorsController < ApplicationController
-#   before_action :set_questionnaire, only: [:show, :edit, :update, :destroy]
-def index
+
+  before_action :authenticate_user!, only: [:create, :new]
+
+  def index
     @questionnaire = QuestionnaireSenior.all
   end
 

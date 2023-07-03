@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get "/contact" => "home#contact"
   get "/about" => "home#about"
-  get "/enquete" => "home#enquete"
+  # get "/enquete" => "home#enquete"
   get "/merci" => "home#merci"
 
 
