@@ -13,4 +13,12 @@ class Coach < ApplicationRecord
        "/assets/user.png"
     end
   end
+
+  def full_photo
+    if photo.attached?
+      photo
+        else
+       "/assets/user.png"
+    end
+  end
 end

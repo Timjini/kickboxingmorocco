@@ -25,7 +25,7 @@ class User < ApplicationRecord
   
   
 
-  def photo_profile 
+  def full_photo 
     if photo.attached?
       photo
         else

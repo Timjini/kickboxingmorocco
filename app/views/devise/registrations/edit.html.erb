@@ -13,10 +13,10 @@
     <div class="container pt-5">
         <div class="row">
           <%if current_coach.present?%>
-          <%= image_tag current_coach.photo_thumbnail, class: "circle-img" %>
+          <%= image_tag current_coach.full_photo, class: "circle-img" %>
           <%= f.file_field :photo, class:"mt-5 p-3" %>
           <%elsif current_user.present?%>
-          <%= image_tag current_user.photo_thumbnail, class: "circle-img" %>
+          <%= image_tag current_user.full_photo, class: "circle-img" %>
           <%= f.file_field :photo, class:"mt-5 p-3" %>
           <%end%> 
         </div>
