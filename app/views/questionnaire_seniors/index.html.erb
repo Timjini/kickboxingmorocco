@@ -1,0 +1,108 @@
+
+<section class="p-5">
+        <div class="container">
+  <% if current_user.present?%>
+        <h2>Questionnaire Adultes</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>échelle satisfaction</th>
+                    <th>valeur</th>
+                    <th>qualité</th>
+                    <th>disciplines</th>
+                    <th>sécurité</th>
+                    <th>commentaire</th>
+                    <th>recommandation</th>
+                    <th>suggestion</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% if @questionnaire.present?%>
+              <% @questionnaire.each do |key|%>
+                <tr>
+                    <td><%=key.satisfaction%></td>
+                    <td>
+                        <% filtered_values = key.value.reject { |value| value == "0" }.map { |value| value.gsub("_", " ") } %>
+                        <%= filtered_values.join(", ") %>
+                    </td>
+                    <td><%=key.qualite%></td>
+                    <td>
+                        <% filtered_arts = key.discipline.reject {|value| value == "0"}.map {|value| value.gsub("_", " ")}%>
+                        <%=filtered_arts.join(", ")%>
+                    </td>
+                    <td><%=key.securite%></td>
+                    <td><%=key.gym_commentaire%></td>
+                    <td><%=key.tendance%></td>
+                    <td><%=key.suggestion%></td>
+                </tr>
+              <%end%>
+            <%end%>
+            </tbody>
+        </table>
+        <%else%>
+        <div class="container">
+            <h2>Questionnaire Adultes</h2>
+            <p>Vous devez être connecté pour voir les questionnaires</p>
+             <a href="/users/sign_in">CONNECTEZ-VOUS</a> 
+        </div>
+    <%end%>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Data from the given questionnaire
+        const data = {
+            "questionnaire_senior": {
+                "satisfaction": "neutre",
+                "value": ["0", "0", "0", "force_et_endurance", "0", "competence_d_auto_defense", "0", "0", "0", "0", "0", "0", "muay_thai", "0", "0"],
+                "qualite": "moyenne",
+                "securite": "oui",
+                "gym_commentaire": "text ici",
+                "tendance": "absolument",
+                "suggestion": "text ici"
+            },
+            "commit": "Create Questionnaire senior"
+        };
+
+        // Extracting relevant data for the chart
+        const satisfactionValue = 0.5; // Assign a numerical value for "neutre"
+        const qualiteValue = 2.5; // Assign a numerical value for "moyenne"
+        const securiteValue = 1; // Assign a numerical value for "oui"
+        const tendanceValue = 1; // Assign a numerical value for "absolument"
+
+        const dataValues = data.questionnaire_senior.value.map(value => {
+            if (value === "force_et_endurance") {
+                return 1; // Assign a numerical value for "force_et_endurance"
+            } else if (value === "competence_d_auto_defense") {
+                return 1; // Assign a numerical value for "competence_d_auto_defense"
+            } else if (value === "muay_thai") {
+                return 1; // Assign a numerical value for "muay_thai"
+            } else {
+                return parseInt(value); // Convert other numeric values to integers
+            }
+        });
+
+        // Creating the chart
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Satisfaction", "Value", "Qualite", "Securite", "Tendance"],
+                datasets: [{
+                    label: 'Questionnaire Data',
+                    data: [satisfactionValue, dataValues.reduce((a, b) => a + b, 0), qualiteValue, securiteValue, tendanceValue],
+                    backgroundColor: 'rgba(75, 192, 192, 0.8)', // Change the color as desired
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
