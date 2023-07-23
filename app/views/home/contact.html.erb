@@ -1,1 +1,20 @@
 <%= render "components/header"%>
+
+<%
+=begin%>
+  form for @contact
+<%
+=end%>
+
+<%= form_for @contact do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :message %>
+  <%= f.text_area :message %>
+  <%=f.label :phone%>
+    <%=f.text_field :phone%>
+
+  <%= f.submit %>
+<% end %>

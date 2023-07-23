@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root "home#index"
 
   get "/contact" => "home#contact"
+  post "/contact" => "home#create_contact"
+
+  resources :contacts
   get "/about" => "home#about"
   # get "/enquete" => "home#enquete"
   get "/merci" => "home#merci"
