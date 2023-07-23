@@ -61,6 +61,9 @@ Rails.application.configure do
 
   config.action_controller.allow_forgery_protection = false
 
+  # allow requests from coachissam.com
+  config.hosts << "coachissam.com"
+
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
