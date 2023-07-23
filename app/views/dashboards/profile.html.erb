@@ -1,1 +1,60 @@
-<p> Profile </p>
+<style>
+    .box{
+        min-height: 80vh;
+        padding: 20px;
+        background: #0d0d0d;  
+
+    }
+
+    .page-title{
+        /* margin-bottom: 20px; */
+        max-width: 10%;
+    }
+    span {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 20px;
+        margin-bottom: 20px;
+        background: #C9D6FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        
+    }
+</style>
+<%if current_coach.present?%>
+<div class="box p-5">
+   <div class="page-title">
+    <h2 class="text-white"> Mon Profile </h2>
+        <hr class="bg-primary">
+    </div>
+    <div class=" pt-5 card">
+        <div class="">
+            <%= image_tag(current_coach.full_photo, class:"circle-img")%>
+        </div>
+        <div class="">
+            <span><%=current_coach.full_name%></span>
+            <span><%=current_coach.email%></span>
+        </div>
+    </div>
+
+     <div class=" pt-5 card">
+        <div class="">
+            <%= image_tag(current_coach.full_photo, class:"circle-img")%>
+        </div>
+        <div class="">
+            <span><%=current_coach.full_name%></span>
+            <span><%=current_coach.email%></span>
+        </div>
+    </div>
+</div>
+<%end%>

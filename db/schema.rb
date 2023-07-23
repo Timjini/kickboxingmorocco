@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_30_214849) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_12_154618) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -88,6 +88,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_30_214849) do
     t.datetime "updated_at", null: false
     t.index ["coach_id"], name: "index_individual_sessions_on_coach_id"
     t.index ["user_id"], name: "index_individual_sessions_on_user_id"
+  end
+
+  create_table "programmes", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "type"
+    t.string "duration"
+    t.string "level"
+    t.string "price"
+    t.string "jour"
+    t.string "heure"
+    t.string "groupe"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "questionnaire_seniors", force: :cascade do |t|
