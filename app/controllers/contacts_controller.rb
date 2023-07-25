@@ -8,11 +8,11 @@ class ContactsController < ApplicationController
         @contact = Contact.new(contact_params)
 
         if @contact.save
-            flash[:notice] = "Votre message a bien été envoyé."
+            flash[:success] = "Votre message a bien été envoyé."
             redirect_to root_path
         else
             flash[:alert] = "Une erreur est survenue. Veuillez réessayer."
-            redirect_to root_path
+            redirect_to "/contact"
         end
     end
 

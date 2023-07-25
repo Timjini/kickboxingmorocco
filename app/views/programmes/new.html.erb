@@ -1,0 +1,40 @@
+<%= form_for @programme do |f| %>
+
+
+<div class="container p-5">
+<h2 class="pb-5"> Cree Un Nouveau Programme</h2>
+    <form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+        <label for="inputEmail4">Nom De Programme</label>
+        <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group col-md-6">
+        <label class="pt-5">Image to Coverture</label>
+                <%= f.file_field :image, class: '' %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.time_select :heure, class: 'form-control' %>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+        <label >Choisissez le Groupe</label>
+        <%= f.collection_select(:groupe, Programme::GROUPES, :last, :first, { include_blank: false }, { class: '' }) %>
+        </div>
+        <div class="form-group col-md-4">
+        <label >Jour Du Programme</label>
+        <%= f.collection_select(:jour, Programme::JOURS, :last, :first, { include_blank: false }, { class: '' }) %>
+        </div>
+        <div class="form-group col-md-2">
+        <label for="inputZip">Status</label>
+        <%= f.collection_select(:status, Programme::STATUS_OPTIONS, :last, :first, { include_blank: false }, { class: '' }) %>
+        </div>
+    </div>
+    
+    <%= f.submit 'Cree', class: 'btn btn-primary' %>
+    
+    </form>
+</div>
+
+<%end%>

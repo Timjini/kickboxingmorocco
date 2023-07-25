@@ -1,38 +1,36 @@
 class Programme < ApplicationRecord
 
-    def status
-        if self.status == "1"
-            return "Actif"
+    has_one_attached :image
+
+
+    def image_cover
+        if image.attached?
+            image
         else
-            return "Inactif"
+            "/assets/user.png"
         end
     end
 
-    def type
-        if self.type == "1"
-            return "Adulte"
-        else
-            return "Enfant"
-        end
-    end
+    STATUS_OPTIONS = [
+    ["Actif", "1"],
+    ["Inactif", "0"]
+  ]
+    
+    GROUPES = [
+        ["Adultes", "Adultes"],
+        ["Enfants", "Enfants"],
+    ]
 
-    def jour
-        if self.jour == "1"
-            return "Lundi"
-        elsif self.jour == "2"
-            return "Mardi"
-        elsif self.jour == "3"
-            return "Mercredi"
-        elsif self.jour == "4"
-            return "Jeudi"
-        elsif self.jour == "5"
-            return "Vendredi"
-        elsif self.jour == "6"
-            return "Samedi"
-        elsif self.jour == "7"
-            return "Dimanche"
-        end
-    end
+   JOURS = [
+    ["Lundi", "Lundi"],
+    ["Mardi", "Mardi"],
+    ["Mercredi", "Mercredi"],
+    ["Jeudi", "Jeudi"],
+    ["Vendredi", "Vendredi"],
+    ["Samedi", "Samedi"],
+    ["Dimanche", "Dimanche"]
+  ]
+
 
 
 end
