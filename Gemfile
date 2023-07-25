@@ -53,6 +53,8 @@ gem 'active_model_serializers'
 
 gem 'rack-cors'
 
+
+
 # dotenv
 gem 'dotenv-rails', groups: [:development, :test]
 

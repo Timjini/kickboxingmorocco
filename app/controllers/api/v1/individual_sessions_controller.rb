@@ -3,6 +3,8 @@ module Api
     module V1
         class IndividualSessionsController < ApplicationController
 
+          skip_before_action :verify_authenticity_token
+
           include IndividualSessionsHelper
 
 
@@ -18,6 +20,8 @@ module Api
                 end
                 
                 if individual_session.save
+                    # send email to coach
+                    IndividualSessionMailer.new_individual_session_email(individual_session).deliver_later
                     render json: individual_session, status: :created, serializer: Api::V1::IndividualSessionsSerializer
                   else
                     render json: { errors: individual_session.errors.full_messages }, status: :unprocessable_entity
@@ -42,6 +46,7 @@ module Api
                         :client_phone
                       )
                 end
+
         end
     end
 end

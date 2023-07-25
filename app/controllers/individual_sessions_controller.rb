@@ -1,2 +1,4 @@
 class IndividualSessionsController < ApplicationController
+
+
 end
