@@ -80,6 +80,7 @@ Rails.application.configure do
 
   # allow requests from coachissam.com
   config.hosts << "coachissam.com"
+  config.hosts << "kickboxingmorocco.club"
 
   # Use a different logger for distributed setups.
   # require "syslog/logger"

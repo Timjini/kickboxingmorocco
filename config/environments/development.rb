@@ -63,6 +63,7 @@ Rails.application.configure do
 
   # allow requests from coachissam.com
   config.hosts << "coachissam.com"
+  config.hosts << "kickboxingmorocco.club"
 
 
   # Raises error for missing translations.
