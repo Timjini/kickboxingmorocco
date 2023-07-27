@@ -3,10 +3,11 @@ class ProgrammesController < ApplicationController
     before_action :authenticate_user_coach!, except: [:index, :show]
 
     def index
-        @programmes = Programme.all
+        @programmes = Programme.where(status: "1")
     end
 
     def show
+        @programme = Programme.find(params[:id])
     end
 
     def new
@@ -35,9 +36,4 @@ class ProgrammesController < ApplicationController
         params.require(:programme).permit(:name, :description, :type, :duration, :level, :price, :jour, :heure, :groupe, :status, :image)
     end
 
-    def authenticate_user_coach!
-        unless current_coach 
-            redirect_to root_path, alert: "Vous n'avez pas les droits pour accéder à cette page."
-        end
-    end
 end

@@ -57,4 +57,24 @@ background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, F
         </div>
     </div>
 </div>
+
+<%elsif current_user.present?%>
+
+<div class="box p-5">
+   <div class="page-title">
+    <h2 class="text-white"> Mon Profile </h2>
+        <hr class="bg-primary">
+    </div>
+    <div class=" pt-5 card">
+        <div class="">
+            <%= image_tag(current_user.full_photo, class:"circle-img")%>
+        </div>
+        <div class="">
+            <span><%=current_user.full_name%></span>
+            <span><%=current_user.email%></span>
+        </div>
+    </div>
+</div>
+
+    
 <%end%>

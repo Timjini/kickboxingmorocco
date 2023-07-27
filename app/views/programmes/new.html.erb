@@ -1,5 +1,9 @@
+<style>
+.programme-desc{
+    height: 200px!important;
+}
+</style>
 <%= form_for @programme do |f| %>
-
 
 <div class="container p-5">
 <h2 class="pb-5"> Cree Un Nouveau Programme</h2>
@@ -7,7 +11,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
         <label for="inputEmail4">Nom De Programme</label>
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name, class: 'form-control', placeholder:"nom du programmes" %>
         </div>
         <div class="form-group col-md-6">
         <label class="pt-5">Image to Coverture</label>
@@ -30,6 +34,11 @@
         <label for="inputZip">Status</label>
         <%= f.collection_select(:status, Programme::STATUS_OPTIONS, :last, :first, { include_blank: false }, { class: '' }) %>
         </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputAddress">Description</label>
+        <%= f.text_area :description, class: 'form-control programme-desc', placeholder:"Information du programme" %>
     </div>
     
     <%= f.submit 'Cree', class: 'btn btn-primary' %>
