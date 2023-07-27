@@ -71,8 +71,8 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.smtp_settings = {
-    user_name: ENV['kbm_api'],
-    password: ENV['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'],
+    user_name: ENV['SEND_GRID_USERNAME'],
+    password: ENV['SEND_GRID_PASSWORD'],
     domain: 'kickboxingmorocco.club',
     address: 'smtp.sendgrid.net',
     port: 587,
