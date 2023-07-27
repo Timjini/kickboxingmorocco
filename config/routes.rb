@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # get "/enquete" => "home#enquete"
   get "/merci" => "home#merci"
 
+  get "/reservations" => "individual_sessions#index"
+  get "/mes_reservations" => "individual_sessions#my_sessions"
+
 
   
   resources :questionnaires do
@@ -26,6 +29,10 @@ Rails.application.routes.draw do
   resources :questionnaire_seniors do
     get 'enquete', to: 'questionnaire_seniors#new', on: :collection
   end
+
+    resource :individual_sessions do
+      get 'my_sessions', to: 'individual_sessions#my_sessions', on: :collection
+    end
 
 
 

@@ -1,5 +1,8 @@
-<section>
-    <div class="container">
+
+
+
+<section style="background-color:black;color:white;">
+    <div class="container pt-5 pb-5">
         <div class="row">
             <div class="col-md-8">
 
@@ -8,12 +11,17 @@
             </div>
             <div class="col-md-4">
                 <h2><%=@programme.name%></h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <span><%= @programme.heure.to_s %></span>
+                <div class="row ">
+                    <div class="col-md-2">
+                        <span><%=@programme.time%></span>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-2">
                         <span><%= @programme.jour %></span>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span><%=@programme.description%></span>
                     </div>
                 </div>
             </div>

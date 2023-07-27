@@ -18,4 +18,17 @@ class ApplicationController < ActionController::Base
     def json_request?
       request.format.json?
     end
+
+    def authenticate_user!
+      unless current_user
+        redirect_to new_user_session_path, alert: "Vous devez vous connecter pour accéder à cette page."
+      end
+    end
+
+    def authenticate_user_coach!
+      unless current_coach 
+            redirect_to root_path, alert: "Vous n'avez pas les droits pour accéder à cette page."
+      end
+    end
+
 end

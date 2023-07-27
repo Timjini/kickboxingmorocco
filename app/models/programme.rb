@@ -31,6 +31,26 @@ class Programme < ApplicationRecord
     ["Dimanche", "Dimanche"]
   ]
 
+  def time
+    if heure.present?
+    time_hash_string = self.heure
+        time_hash = eval(time_hash_string)
+        # Extract the components from the hash
+        year = time_hash[1]
+        month = time_hash[2]
+        day = time_hash[3]
+        hour = time_hash[4]
+        minute = time_hash[5]
+
+        # Create a valid time object using Time.new
+        time_object = Time.new(year, month, day, hour, minute)
+
+        # Format the time object using strftime
+        time_object.strftime("%H:%M")
+    end
+
+  end
+
 
 
 end
