@@ -1,8 +1,8 @@
 # app/models/session_booking.rb
 class IndividualSession < ApplicationRecord
     before_validation :extract_time_from_session_time
-    belongs_to :user
-    belongs_to :coach
+    belongs_to :user , destroy: true
+    belongs_to :coach , destroy: true
 
     private
 
