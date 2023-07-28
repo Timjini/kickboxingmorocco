@@ -1,10 +1,10 @@
-test:
-  service: Disk
-  root: <%= Rails.root.join("tmp/storage") %>
+# test:
+#   service: Disk
+#   root: <%= Rails.root.join("tmp/storage") %>
 
-local:
-  service: Disk
-  root: <%= Rails.root.join("storage") %>
+# local:
+#   service: Disk
+#   root: <%= Rails.root.join("storage") %>
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
@@ -32,3 +32,11 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+cloudflare:
+  service: S3
+  endpoint: https://28afba52e7402b82150c6d7186091120.r2.cloudflarestorage.com/kbm
+  access_key_id: COULDFLARE_KEY
+  secret_access_key: CLOUDFLARE_SECRET
+  region: auto
+  bucket: kbm

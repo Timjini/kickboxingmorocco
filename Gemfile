@@ -53,6 +53,9 @@ gem 'active_model_serializers'
 
 gem 'rack-cors'
 
+gem "aws-sdk-s3", require: false
+
+
 
 
 # dotenv
