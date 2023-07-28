@@ -65,7 +65,7 @@ Rails.application.configure do
   config.hosts << "coachissam.com"
   config.hosts << "kickboxingmorocco.club"
 
-  config.active_storage.service = :cloudflare
+  #config.active_storage.service = :cloudflare
 
 
   #mailcatcher
