@@ -1,3 +1,23 @@
-<h1> Programmes </h1>
-
-<%=@programmes.inspect%>
+<section class="" style="background-color:black;">
+    <div class="container pt-5 pb-5 programme-container">
+        <h1 class="text-center p-2 display-4"> Nos Programmes </h1>
+    <%if @programmes.nil?%>
+        <h1 class="text-center p-2"> Aucun programme disponible </h1>
+    <%else%>
+        <div class="row">
+            <%@programmes.first(3).each do |p|%>
+                <div class="col-md-4 pb-5">
+                    <%= image_tag p.image_cover, class:"programme-cover-img" %>
+                    <div class="programme-card-content">
+                        <h2><%=p.name%></h2>
+                        <span><%=p.time%></span>
+                        <a href="/programmes/<%=p.id%>">
+                            <button class="btn-danger p-2"> Visitez  </button>
+                        </a>
+                    </div>
+                </div>
+            <%end%>
+        </div>
+    <%end%>
+    </div>
+</section>

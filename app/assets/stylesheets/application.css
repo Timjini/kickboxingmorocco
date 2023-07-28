@@ -3177,3 +3177,9 @@ button[type="submit"] i {
   justify-content: center;
   gap: 10px;
 }
+
+
+/* Programmes  */
+.programme-card-content{display:flex;flex-direction: column;}
+.programme-cover-img{max-height:50rem;width:auto;}
+.programme-container{color:white;}
