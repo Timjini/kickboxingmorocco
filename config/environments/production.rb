@@ -86,7 +86,7 @@ Rails.application.configure do
   # require "syslog/logger"
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new "app-name")
 
-    config.action_controller.default_url_options = { host: 'kickboxingmorocco.club' }
+    # config.action_controller.default_url_options = { host: 'kickboxingmorocco.club' }
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
@@ -104,6 +104,9 @@ Rails.application.configure do
     authentication:  :plain,
     enable_starttls_auto: true
   }
+
+    config.active_storage.service = :cloudflare
+
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
