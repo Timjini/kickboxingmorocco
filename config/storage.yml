@@ -36,7 +36,7 @@
 cloudflare:
   service: S3
   endpoint: https://28afba52e7402b82150c6d7186091120.r2.cloudflarestorage.com/kbm
-  access_key_id: 3eb0157035489b1716a03d8aefab6e6e
-  secret_access_key: 3d6ef002fbd6d53e29d9bb24c6043d711c9ed2992fd3ae8d75e955e9db67ea88
+  access_key_id: COULDFLARE_KEY
+  secret_access_key: CLOUDFLARE_SECRET
   region: auto
   bucket: kbm
