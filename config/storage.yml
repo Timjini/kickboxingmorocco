@@ -35,6 +35,7 @@
 
 cloudflare:
   service: S3
+  account_id: ACCOUNT_ID
   endpoint: CLOUDFLARE_ENDPOINT
   access_key_id: COULDFLARE_KEY
   secret_access_key: CLOUDFLARE_SECRET
