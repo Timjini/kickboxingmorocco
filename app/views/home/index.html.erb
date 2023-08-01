@@ -1,2 +1,30 @@
 <%= render "components/slider"%>
 <%= render "components/hero"%>
+<script>
+
+function popUp() {
+  // Check if the popup has been shown before by checking the value in localStorage
+  const popupShownBefore = localStorage.getItem('popupShown');
+
+  if (!popupShownBefore) {
+    Swal.fire({
+      title: '<strong>Avis / Announcement</strong>',
+      icon: 'info',
+      html:
+        "<p>Chers membres et visiteurs,Notre salle sera fermée jusqu'au 1er septembre. Nous vous remercions pour votre compréhension.</p>" +
+        '<p>Dear members and visitors, Kickboxing Morocco gym will be closed until 1st September. Thank you for your understanding.</p>' +
+        '',
+      showCloseButton: true,
+      showCancelButton: false,
+      focusConfirm: false,
+    });
+
+    // Set the flag in localStorage to indicate that the popup has been shown
+    localStorage.setItem('popupShown', 'true');
+  }
+}
+
+popUp();
+
+
+</script>
