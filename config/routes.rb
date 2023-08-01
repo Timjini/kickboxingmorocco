@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get "/reservations" => "individual_sessions#index"
   get "/mes_reservations" => "individual_sessions#my_sessions"
+  get "/reservations/:id" => "individual_sessions#show"
 
 
   

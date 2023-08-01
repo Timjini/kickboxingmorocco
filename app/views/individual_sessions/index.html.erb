@@ -1,1 +1,65 @@
-<h1> Sessions </h1>
+<style>
+.table {
+    border: 1px solid #ccc;
+    border-radius: 50px!important;
+    width: 100%;
+}
+</style>
+<div class="container pt-5 pb-5">
+ <h1 class="display-4 text-center pb-3"> Mes Reservations </h1>
+    <table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+        <tr>
+        <th>Info</th>
+        <th>Reservation</th>
+        <th>Status</th>
+        <th>Info Payment</th>
+        <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% if @sessions.present? %>
+     <% @sessions.each do |s| %>
+        <tr>
+        <td>
+            <div class="d-flex align-items-center">
+            <%
+=begin%>
+ <img
+                src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                alt=""
+                style="width: 45px; height: 45px"
+                class="rounded-circle"
+                /> 
+<%
+=end%>
+            <div class="ms-3">
+                <p class="fw-bold mb-1 m-2">Nom:<%=s.client_full_name%></p>
+                <p class="text-muted mb-0 m-2">Email:<%=s.client_email%> <br/>Tel:<%=s.client_phone%></p>
+            </div>
+            </div>
+        </td>
+        <td>
+            <p class="fw-normal mb-1"><%=s.session_date%></p>
+            <p class="text-muted mb-0"><%=s.session_time%></p>
+        </td>
+        <td>
+            <span class="badge badge-success rounded-pill d-inline"><%=s.status%></span>
+        </td>
+        <td>Payement:<%=s.payment_method%></td>
+        <td>
+            <a href="/reservations/<%=s.id%>" class="btn btn-link btn-sm btn-rounded">
+            Voir
+            </button>
+        </td>
+        </tr>
+        <% end %>
+        <% else %>
+        <tr>
+        <td colspan="5" class="text-center">Vous N'avez aucune reservations</td>
+        </tr>
+        <% end %>
+        
+    </tbody>
+    </table>
+</div>

@@ -1,13 +1,18 @@
 class IndividualSessionsController < ApplicationController
-    before_action :set_individual_session, only: [:index]
+    # before_action :set_individual_session, only: [:index]
     before_action :authenticate_user_coach!, except: [:create, :new , :show ,:my_sessions]
 
     def index
         if current_coach.present?
-        @sessions = IndividualSession.where(status: "1")
+        # @sessions = IndividualSession.where(status: "1")
+        @sessions = IndividualSession.all
         else
             redirect_to individual_sessions_path, alert: "Vous n'avez pas les droits pour accéder à cette page."
         end
+    end
+
+    def show
+        @session = IndividualSession.find(params[:id])
     end
 
     def new
@@ -35,9 +40,9 @@ class IndividualSessionsController < ApplicationController
 
     private
 
-    def set_individual_session
-        @session = IndividualSession.find(params[:id])
-    end
+    # def set_individual_session
+    #     @session = IndividualSession.find(params[:id])
+    # end
 
     def session_params
         params.require(:individual_session).permit(:user_id, :coach_id, 
